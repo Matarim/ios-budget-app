@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z4m-sk-cyv">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Income-->
+        <scene sceneID="eVC-JN-k4Z">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Income" id="kdZ-UJ-BFi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QAX-Kz-j4q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-704" y="-178"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="aEx-6h-C92">
+            <objects>
+                <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z4m-sk-cyv" userLabel="Home View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jLU-3R-64T">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTg-3G-gCT">
+                                <rect key="frame" x="254" y="339.5" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <accessibility key="accessibilityConfiguration" hint="Expense"/>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="minus.circle.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="GCr-Ds-w1Z" kind="presentation" id="6qu-Pm-lCo"/>
+                                </connections>
+                            </button>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nIt-j9-FNJ">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <tabBarItem title="Home" image="house" catalog="system" selectedImage="house.fill" id="ho0-Po-Tew"/>
+                                    <tabBarItem title="Income/Expense" image="dollarsign.square" catalog="system" selectedImage="dollarsign.square.fill" id="CoO-dY-cRm"/>
+                                    <tabBarItem title="Chart" image="chart.bar" catalog="system" selectedImage="chart.bar.fill" id="ski-pC-k8e"/>
+                                </items>
+                            </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Funds:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8Y-3g-tkz">
+                                <rect key="frame" x="112" y="110" width="190" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGe-dp-qs9">
+                                <rect key="frame" x="95" y="339.5" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <accessibility key="accessibilityConfiguration" hint="Income"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="plus.circle.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="kdZ-UJ-BFi" kind="presentation" id="n7V-vZ-448"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="J8Y-3g-tkz" firstAttribute="top" secondItem="KFg-LS-c3i" secondAttribute="top" constant="66" id="0qA-Az-dIQ"/>
+                            <constraint firstItem="J8Y-3g-tkz" firstAttribute="leading" secondItem="KFg-LS-c3i" secondAttribute="leading" constant="112" id="UnO-f2-SpH"/>
+                            <constraint firstItem="KFg-LS-c3i" firstAttribute="trailing" secondItem="J8Y-3g-tkz" secondAttribute="trailing" constant="112" id="hRa-6q-tEz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KFg-LS-c3i"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bVw-rk-iHm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13.043478260869566" y="91.741071428571431"/>
+        </scene>
+        <!--Expense-->
+        <scene sceneID="gf8-8l-pIf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Expense" id="GCr-Ds-w1Z" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DaY-2G-S4b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="631" y="-148"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+    <resources>
+        <image name="chart.bar" catalog="system" width="128" height="90"/>
+        <image name="chart.bar.fill" catalog="system" width="128" height="89"/>
+        <image name="dollarsign.square" catalog="system" width="128" height="114"/>
+        <image name="dollarsign.square.fill" catalog="system" width="128" height="114"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="minus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
+</document>
