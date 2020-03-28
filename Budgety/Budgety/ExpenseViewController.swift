@@ -21,6 +21,10 @@ class ExpenseViewController: UIViewController {
     @IBOutlet weak var expenseNote: UITextField!
     @IBOutlet weak var repeatSelection: UITextField!
     
+    var amountDeclared: String {
+        expenseAmount.text!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +41,7 @@ class ExpenseViewController: UIViewController {
     }
     
     @IBAction func createData_btn(_ sender: Any) {
+        NotificationCenter.default.post(name: .expenseKey, object: self)
         dismiss(animated: true)
     }
     

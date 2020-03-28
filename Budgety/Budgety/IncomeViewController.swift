@@ -22,6 +22,11 @@ class IncomeViewController: UIViewController {
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var repeatSelection: UITextField!
+
+    var amountDeclared: String {
+        incomeAmount.text!
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +43,8 @@ class IncomeViewController: UIViewController {
         self.switchMode(self)
     }
     
-    @IBAction func createData_btn(_ sender: Any) {
+    @IBAction func createData_btn(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .incomeKey, object: self)
         dismiss(animated: true)
     }
     
@@ -79,3 +85,4 @@ class IncomeViewController: UIViewController {
     }
 
 }
+

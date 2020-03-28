@@ -19,6 +19,8 @@
 		82EDAB94242D94DF0034A5B7 /* Income.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82EDAB93242D94DF0034A5B7 /* Income.storyboard */; };
 		82EDAB96242D98120034A5B7 /* Expense.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82EDAB95242D98120034A5B7 /* Expense.storyboard */; };
 		82EDAB98242D98360034A5B7 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EDAB97242D98360034A5B7 /* ExpenseViewController.swift */; };
+		82EDAB9E242F8CD40034A5B7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EDAB9D242F8CD40034A5B7 /* HomeViewController.swift */; };
+		82EDABA0242F96670034A5B7 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EDAB9F242F96670034A5B7 /* NotificationNameExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		82EDAB93242D94DF0034A5B7 /* Income.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Income.storyboard; sourceTree = "<group>"; };
 		82EDAB95242D98120034A5B7 /* Expense.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Expense.storyboard; sourceTree = "<group>"; };
 		82EDAB97242D98360034A5B7 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
+		82EDAB9D242F8CD40034A5B7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
+		82EDAB9F242F96670034A5B7 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 		8261B97E2423F199003C37A3 /* Budgety */ = {
 			isa = PBXGroup;
 			children = (
+				82EDAB9F242F96670034A5B7 /* NotificationNameExtension.swift */,
+				82EDAB9D242F8CD40034A5B7 /* HomeViewController.swift */,
 				82EDAB93242D94DF0034A5B7 /* Income.storyboard */,
 				82EDAB95242D98120034A5B7 /* Expense.storyboard */,
 				82B6C38E24278EA10076ABBA /* Main.storyboard */,
@@ -285,7 +291,9 @@
 				82EDAB92242D39140034A5B7 /* IncomeViewController.swift in Sources */,
 				82EDAB98242D98360034A5B7 /* ExpenseViewController.swift in Sources */,
 				8261B9802423F199003C37A3 /* AppDelegate.swift in Sources */,
+				82EDABA0242F96670034A5B7 /* NotificationNameExtension.swift in Sources */,
 				8261B9842423F199003C37A3 /* ContentView.swift in Sources */,
+				82EDAB9E242F8CD40034A5B7 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
