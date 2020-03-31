@@ -14,6 +14,7 @@
 		8261B98C2423F19B003C37A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8261B98A2423F19B003C37A3 /* LaunchScreen.storyboard */; };
 		8261B9972423F19C003C37A3 /* BudgetyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261B9962423F19C003C37A3 /* BudgetyTests.swift */; };
 		8261B9A22423F19C003C37A3 /* BudgetyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261B9A12423F19C003C37A3 /* BudgetyUITests.swift */; };
+		82A8DEA32432DA4A00C8EB65 /* IncExpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8DEA22432DA4A00C8EB65 /* IncExpViewController.swift */; };
 		82B6C38F24278EA10076ABBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82B6C38E24278EA10076ABBA /* Main.storyboard */; };
 		82EDAB92242D39140034A5B7 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EDAB91242D39140034A5B7 /* IncomeViewController.swift */; };
 		82EDAB94242D94DF0034A5B7 /* Income.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82EDAB93242D94DF0034A5B7 /* Income.storyboard */; };
@@ -54,6 +55,7 @@
 		8261B99D2423F19C003C37A3 /* BudgetyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8261B9A12423F19C003C37A3 /* BudgetyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetyUITests.swift; sourceTree = "<group>"; };
 		8261B9A32423F19C003C37A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82A8DEA22432DA4A00C8EB65 /* IncExpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncExpViewController.swift; sourceTree = "<group>"; };
 		82B6C38E24278EA10076ABBA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		82EDAB91242D39140034A5B7 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		82EDAB93242D94DF0034A5B7 /* Income.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Income.storyboard; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				82EDAB93242D94DF0034A5B7 /* Income.storyboard */,
 				82EDAB95242D98120034A5B7 /* Expense.storyboard */,
 				82B6C38E24278EA10076ABBA /* Main.storyboard */,
+				82A8DEA22432DA4A00C8EB65 /* IncExpViewController.swift */,
 				8261B97F2423F199003C37A3 /* AppDelegate.swift */,
 				82EDAB91242D39140034A5B7 /* IncomeViewController.swift */,
 				82EDAB97242D98360034A5B7 /* ExpenseViewController.swift */,
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82EDAB92242D39140034A5B7 /* IncomeViewController.swift in Sources */,
+				82A8DEA32432DA4A00C8EB65 /* IncExpViewController.swift in Sources */,
 				82EDAB98242D98360034A5B7 /* ExpenseViewController.swift in Sources */,
 				8261B9802423F199003C37A3 /* AppDelegate.swift in Sources */,
 				82EDABA0242F96670034A5B7 /* NotificationNameExtension.swift in Sources */,
