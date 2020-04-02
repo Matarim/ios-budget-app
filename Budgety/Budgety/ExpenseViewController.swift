@@ -9,7 +9,7 @@
 import UIKit
 
 class ExpenseViewController: UIViewController {
-    
+    let savedExp = UserDefaults.standard
     @IBOutlet weak var inputTextField: UITextField!
     
     private var datePicker: UIDatePicker?
@@ -20,6 +20,10 @@ class ExpenseViewController: UIViewController {
     @IBOutlet weak var repeatSwitch: UISwitch!
     @IBOutlet weak var expenseNote: UITextField!
     @IBOutlet weak var repeatSelection: UITextField!
+    
+    var expTitle = ""
+    var expAmount = ""
+    var expNote = ""
     
     var amountDeclared: String {
         expenseAmount.text!
@@ -42,9 +46,20 @@ class ExpenseViewController: UIViewController {
     
     @IBAction func createData_btn(_ sender: Any) {
         NotificationCenter.default.post(name: .expenseKey, object: self)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let expDate = dateFormatter.date(from: inputTextField.text!)
+        self.expTitle = expenseTitle.text!
+        self.expAmount = expenseAmount.text!
+        self.expNote = expenseNote.text!
+        let expense = Expense(context: PersistenceService.context)
+        expense.amount = Double(self.expAmount)!
+        expense.title = self.expTitle
+        expense.note = self.expNote
+        expense.date = expDate
+        PersistenceService.saveContext()
         dismiss(animated: true)
     }
-    
     
     @IBAction func cancelData_btn(_ sender: Any) {
         dismiss(animated: true)

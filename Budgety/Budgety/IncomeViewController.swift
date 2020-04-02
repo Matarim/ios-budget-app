@@ -27,7 +27,6 @@ class IncomeViewController: UIViewController {
         incomeAmount.text!
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
