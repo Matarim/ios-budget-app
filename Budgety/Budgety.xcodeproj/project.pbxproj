@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8261B9802423F199003C37A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261B97F2423F199003C37A3 /* AppDelegate.swift */; };
-		8261B9842423F199003C37A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261B9832423F199003C37A3 /* ContentView.swift */; };
 		8261B9862423F19B003C37A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8261B9852423F19B003C37A3 /* Assets.xcassets */; };
 		8261B9892423F19B003C37A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8261B9882423F19B003C37A3 /* Preview Assets.xcassets */; };
 		8261B98C2423F19B003C37A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8261B98A2423F19B003C37A3 /* LaunchScreen.storyboard */; };
@@ -19,6 +18,7 @@
 		82A8DEAA2434F11E00C8EB65 /* Budgety.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82A8DEA82434F11E00C8EB65 /* Budgety.xcdatamodeld */; };
 		82A8DEAD2434F23700C8EB65 /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8DEAB2434F23700C8EB65 /* Expense+CoreDataClass.swift */; };
 		82A8DEAE2434F23700C8EB65 /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8DEAC2434F23700C8EB65 /* Expense+CoreDataProperties.swift */; };
+		82A8DEB2243A936700C8EB65 /* IncExpTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8DEB1243A936700C8EB65 /* IncExpTableCell.swift */; };
 		82B6C38F24278EA10076ABBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82B6C38E24278EA10076ABBA /* Main.storyboard */; };
 		82EDAB92242D39140034A5B7 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EDAB91242D39140034A5B7 /* IncomeViewController.swift */; };
 		82EDAB94242D94DF0034A5B7 /* Income.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82EDAB93242D94DF0034A5B7 /* Income.storyboard */; };
@@ -48,7 +48,6 @@
 /* Begin PBXFileReference section */
 		8261B97C2423F199003C37A3 /* Budgety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgety.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8261B97F2423F199003C37A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8261B9832423F199003C37A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8261B9852423F19B003C37A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8261B9882423F19B003C37A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8261B98B2423F19B003C37A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		82A8DEA92434F11E00C8EB65 /* Budgety.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Budgety.xcdatamodel; sourceTree = "<group>"; };
 		82A8DEAB2434F23700C8EB65 /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = "<group>"; };
 		82A8DEAC2434F23700C8EB65 /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		82A8DEB1243A936700C8EB65 /* IncExpTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncExpTableCell.swift; sourceTree = "<group>"; };
 		82B6C38E24278EA10076ABBA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		82EDAB91242D39140034A5B7 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		82EDAB93242D94DF0034A5B7 /* Income.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Income.storyboard; sourceTree = "<group>"; };
@@ -121,21 +121,21 @@
 		8261B97E2423F199003C37A3 /* Budgety */ = {
 			isa = PBXGroup;
 			children = (
-				82A8DEAB2434F23700C8EB65 /* Expense+CoreDataClass.swift */,
-				82A8DEAC2434F23700C8EB65 /* Expense+CoreDataProperties.swift */,
-				82EDAB9F242F96670034A5B7 /* NotificationNameExtension.swift */,
-				82A8DEA62434EAA200C8EB65 /* PersistenceService.swift */,
-				82EDAB9D242F8CD40034A5B7 /* HomeViewController.swift */,
-				82A8DEA22432DA4A00C8EB65 /* IncExpViewController.swift */,
+				82B6C38E24278EA10076ABBA /* Main.storyboard */,
 				82EDAB93242D94DF0034A5B7 /* Income.storyboard */,
 				82EDAB95242D98120034A5B7 /* Expense.storyboard */,
-				82B6C38E24278EA10076ABBA /* Main.storyboard */,
-				8261B97F2423F199003C37A3 /* AppDelegate.swift */,
+				8261B98A2423F19B003C37A3 /* LaunchScreen.storyboard */,
+				82EDAB9D242F8CD40034A5B7 /* HomeViewController.swift */,
+				82A8DEA22432DA4A00C8EB65 /* IncExpViewController.swift */,
 				82EDAB91242D39140034A5B7 /* IncomeViewController.swift */,
 				82EDAB97242D98360034A5B7 /* ExpenseViewController.swift */,
-				8261B9832423F199003C37A3 /* ContentView.swift */,
+				8261B97F2423F199003C37A3 /* AppDelegate.swift */,
+				82A8DEAB2434F23700C8EB65 /* Expense+CoreDataClass.swift */,
+				82A8DEAC2434F23700C8EB65 /* Expense+CoreDataProperties.swift */,
+				82A8DEA62434EAA200C8EB65 /* PersistenceService.swift */,
+				82EDAB9F242F96670034A5B7 /* NotificationNameExtension.swift */,
+				82A8DEB1243A936700C8EB65 /* IncExpTableCell.swift */,
 				8261B9852423F19B003C37A3 /* Assets.xcassets */,
-				8261B98A2423F19B003C37A3 /* LaunchScreen.storyboard */,
 				8261B98D2423F19B003C37A3 /* Info.plist */,
 				8261B9872423F19B003C37A3 /* Preview Content */,
 				82A8DEA82434F11E00C8EB65 /* Budgety.xcdatamodeld */,
@@ -309,10 +309,10 @@
 				82A8DEA32432DA4A00C8EB65 /* IncExpViewController.swift in Sources */,
 				82EDAB98242D98360034A5B7 /* ExpenseViewController.swift in Sources */,
 				8261B9802423F199003C37A3 /* AppDelegate.swift in Sources */,
+				82A8DEB2243A936700C8EB65 /* IncExpTableCell.swift in Sources */,
 				82A8DEAA2434F11E00C8EB65 /* Budgety.xcdatamodeld in Sources */,
 				82A8DEAE2434F23700C8EB65 /* Expense+CoreDataProperties.swift in Sources */,
 				82EDABA0242F96670034A5B7 /* NotificationNameExtension.swift in Sources */,
-				8261B9842423F199003C37A3 /* ContentView.swift in Sources */,
 				82EDAB9E242F8CD40034A5B7 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
