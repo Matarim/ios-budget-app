@@ -1,5 +1,5 @@
 //
-//  Expense+CoreDataClass.swift
+//  Parent+CoreDataClass.swift
 //  Budgety
 //
 //  Created by Matthew Rampey on 4/6/20.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(Expense)
-public class Expense: NSManagedObject {
+@objc(Parent)
+public class Parent: NSManagedObject {
 
 }

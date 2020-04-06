@@ -1,5 +1,5 @@
 //
-//  Expense+CoreDataProperties.swift
+//  Income+CoreDataProperties.swift
 //  Budgety
 //
 //  Created by Matthew Rampey on 4/6/20.
@@ -11,10 +11,10 @@ import Foundation
 import CoreData
 
 
-extension Expense {
+extension Income {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Expense> {
-        return NSFetchRequest<Expense>(entityName: "Expense")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Income> {
+        return NSFetchRequest<Income>(entityName: "Income")
     }
 
     @NSManaged public var parent: Parent?

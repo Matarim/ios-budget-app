@@ -24,9 +24,12 @@ class IncExpViewController: UIViewController, UITableViewDelegate {
     
     var selected:Bool = false
     
-    var expenseArr = [Expense]()
+    //var expenseArr = [Expense]()
+    //var incomeArr = [Income]()
+    var incexpArr = [Parent]()
     
-    private var persistentContainer = NSPersistentContainer(name: "Expense")
+    private var persistentContainer = NSPersistentContainer(name: "Parent")
+    //private var persistentContainer = NSPersistentContainer(name: "Income")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,23 +50,24 @@ class IncExpViewController: UIViewController, UITableViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         getdata()
         
-        
         tableView.reloadData()
         
     }
     
-    func getdata() {
-        let fetchRequest: NSFetchRequest<Expense> = Expense.fetchRequest()
+    func getdata(parentTypeIndex: String? = nil) {
+        let fetchRequest: NSFetchRequest<Parent> = Parent.fetchRequest()
+        
         do{
-            let expenseArr = try PersistenceService.context.fetch(fetchRequest)
-            self.expenseArr = expenseArr
+            let incexpArr = try PersistenceService.context.fetch(fetchRequest)
+            self.incexpArr = incexpArr
+             
         }
         catch {
             print("fetching failed")
         }
     }
     
-   var selectedIndex: IndexPath = IndexPath(row: -1, section: 0)
+   var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
     
 }
 
@@ -82,31 +86,40 @@ extension IncExpViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return(expenseArr.count)
+        return(incexpArr.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let red = UIColor(red: 1, green: 0, blue: 0, alpha: 0.5)
+        let green = UIColor(red: 0, green: 1, blue: 0, alpha: 0.5)
 
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! IncExpTableCellView
         
-        
-        let expense = expenseArr[indexPath.row]
-        cell.backgroundColor = .red
-        cell.titleLabel?.text = expense.title
-        cell.amountLabel?.text = String(expense.amount)
-        cell.noteLabel?.text = expense.note
+        let incexp = incexpArr[indexPath.row]
+        if incexpArr[indexPath.row].isIncome == true {
+            cell.backgroundColor = green
+        } else {
+            cell.backgroundColor = red
+        }
+
+        cell.titleLabel?.text = incexp.title
+        cell.amountLabel?.text = String(incexp.amount)
+        cell.noteLabel?.text = incexp.note
         cell.noteLabel?.sizeToFit()
-        cell.dateLabel?.text = dateFormatter.string(for: expense.date)!
+        cell.dateLabel?.text = dateFormatter.string(for: incexp.date)!
+        
         
         animate()
         return(cell)
+    
     }
     
     func animate() {
-          UIView.animate(withDuration: 0.5, delay: 0.3, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options:  .curveEaseIn, animations: { self.tableView.layoutIfNeeded()})
+          UIView.animate(withDuration: 0.5, delay: 0.3, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options:  .curveEaseInOut, animations: { self.tableView.layoutIfNeeded()})
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

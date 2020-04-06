@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 class ExpenseViewController: UIViewController {
-    let savedExp = UserDefaults.standard
+
     @IBOutlet weak var inputTextField: UITextField!
     
     private var datePicker: UIDatePicker?
@@ -57,6 +58,7 @@ class ExpenseViewController: UIViewController {
         expense.title = self.expTitle
         expense.note = self.expNote
         expense.date = expDate
+        expense.isIncome = false
         PersistenceService.saveContext()
         dismiss(animated: true)
     }

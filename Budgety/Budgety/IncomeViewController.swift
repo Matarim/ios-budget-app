@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class IncomeViewController: UIViewController {
     
@@ -22,6 +23,10 @@ class IncomeViewController: UIViewController {
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var repeatSelection: UITextField!
+    
+    var incTitle = ""
+    var incAmount = ""
+    var incNote = ""
 
     var amountDeclared: String {
         incomeAmount.text!
@@ -44,6 +49,19 @@ class IncomeViewController: UIViewController {
     
     @IBAction func createData_btn(_ sender: UIButton) {
         NotificationCenter.default.post(name: .incomeKey, object: self)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let incDate = dateFormatter.date(from: inputTextField.text!)
+        self.incTitle = incomeTitle.text!
+        self.incAmount = incomeAmount.text!
+        self.incNote = incomeNote.text!
+        let income = Income(context: PersistenceService.context)
+        income.amount = Double(self.incAmount)!
+        income.title = self.incTitle
+        income.note = self.incNote
+        income.date = incDate
+        income.isIncome = true
+        PersistenceService.saveContext()
         dismiss(animated: true)
     }
     
