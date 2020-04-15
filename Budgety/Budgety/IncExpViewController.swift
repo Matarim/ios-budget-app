@@ -29,7 +29,7 @@ class IncExpViewController: UIViewController, UITableViewDelegate {
     var incexpArr = [Parent]()
     
     private var persistentContainer = NSPersistentContainer(name: "Parent")
-    //private var persistentContainer = NSPersistentContainer(name: "Income")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,6 @@ class IncExpViewController: UIViewController, UITableViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
 
-        
         let now = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "LLLL"
@@ -67,11 +66,23 @@ class IncExpViewController: UIViewController, UITableViewDelegate {
         }
     }
     
-   var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
+   var selectedIndex: IndexPath = IndexPath(row: -1, section: 0)
     
 }
 
 extension IncExpViewController: UITableViewDataSource{
+    
+    func saveContext () {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -87,6 +98,18 @@ extension IncExpViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return(incexpArr.count)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let dataItem = incexpArr[indexPath.row]
+            PersistenceService.context.delete(dataItem)
+            incexpArr.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .bottom)
+            PersistenceService.saveContext()
+            saveContext()
+            print(dataItem)
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,16 +137,15 @@ extension IncExpViewController: UITableViewDataSource{
         
         
         animate()
-        return(cell)
+        return cell
     
     }
     
     func animate() {
-          UIView.animate(withDuration: 0.5, delay: 0.3, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options:  .curveEaseInOut, animations: { self.tableView.layoutIfNeeded()})
+        UIView.animate(withDuration: 0.5, delay: 0.3, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options:  .curveEaseInOut, animations: { self.tableView.layoutIfNeeded()})
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         selectedIndex = indexPath
         
           

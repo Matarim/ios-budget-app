@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 let incomeNotificationKey = "incomeKey"
 let expenseNotificationKey = "expenseKey"
@@ -15,17 +16,26 @@ let currentAmt = UserDefaults.standard
 class HomeViewController: UIViewController {
     @IBOutlet weak var amountAvailable: UILabel!
     var previousAmount:Double = 0;
+    var previousCount:Int = 0;
     var newAmount:Double = 0;
     var income = false;
     var expense = false;
+    var incexpArr = [Parent]()
+    var incomeArr = [Double]()
+    var expenseArr = [Double]()
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let x = currentAmt.object(forKey: "current_Amount") as? String {
-            amountAvailable.text = x
+        previousAmount = Double(amountAvailable.text!)!
+        getdata()
+        if incexpArr.count != previousCount {
+            performCalc()
+        } else {
+            amountAvailable.text = String(previousAmount)
+            print("doing this!")
         }
     }
     
@@ -36,23 +46,46 @@ class HomeViewController: UIViewController {
         if amountAvailable.text == "" {
             amountAvailable.text = "0"
         }
+     
         createObserver()
+        
+    }
+    
+    func getdata(parentTypeIndex: String? = nil) {
+        let fetchRequest: NSFetchRequest<Parent> = Parent.fetchRequest()
+        do{
+            incomeArr.removeAll()
+            expenseArr.removeAll()
+            let incexpArr = try PersistenceService.context.fetch(fetchRequest)
+            self.incexpArr = incexpArr
+        }
+        catch {
+            print("fetching failed")
+        }
     }
     
     func performCalc() {
-        previousAmount = Double(self.amountAvailable.text!)!
-        if income == true {
-            self.amountAvailable.text = String(previousAmount + newAmount)
-            income = false
-            
-        } else if expense == true {
-            self.amountAvailable.text = String(previousAmount - newAmount)
-            expense = false
-            
+        if incexpArr.count > 0 {
+            separatingData()
+            amountAvailable.text = String(incomeArr.reduce(0, +) - expenseArr.reduce(0, +))
         } else {
-            self.amountAvailable.text = String(previousAmount)
+            amountAvailable.text = String(previousAmount)
+            print("doing calc!")
         }
-        currentAmt.set(self.amountAvailable.text, forKey: "current_Amount")
+    }
+    
+    func separatingData() {
+        let sum = 0
+        previousCount = incexpArr.count
+        for item in incexpArr {
+            if item.isIncome == true {
+                let inc = incexpArr.remove(at: sum)
+                incomeArr.append(inc.amount)
+            } else {
+                let exp = incexpArr.remove(at: sum)
+                expenseArr.append(exp.amount)
+            }
+        }
     }
     
     func createObserver() {
@@ -60,20 +93,22 @@ class HomeViewController: UIViewController {
         NotificationCenter.default.addObserver(forName: .incomeKey, object: nil, queue: OperationQueue.main) {
             (notification) in
             let amtAvail = notification.object as! IncomeViewController
-            //let convrtAmt = amtAvail.amountDeclared
-            //self.amountAvailable.text = amtAvail.amountDeclared
             self.newAmount = Double(amtAvail.amountDeclared)!
             self.income = true
-            self.performCalc()
+            self.getdata()
+            self.amountAvailable.text! = String(self.previousAmount + self.newAmount)
+            
         }
         
         NotificationCenter.default.addObserver(forName: .expenseKey, object: nil, queue: OperationQueue.main) {
              (notification) in
             let amtAvail = notification.object as! ExpenseViewController
-            //preferences.set(self.amountAvailable, forKey: "available_balance")
             self.newAmount = Double(amtAvail.amountDeclared)!
             self.expense = true
-            self.performCalc()
+            self.getdata()
+            self.amountAvailable.text! = String(self.previousAmount - self.newAmount)
+
+            
          }
         
     }
