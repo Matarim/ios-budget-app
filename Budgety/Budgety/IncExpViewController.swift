@@ -55,11 +55,13 @@ class IncExpViewController: UIViewController, UITableViewDelegate {
     
     func getdata(parentTypeIndex: String? = nil) {
         let fetchRequest: NSFetchRequest<Parent> = Parent.fetchRequest()
+        let sortDesc = NSSortDescriptor(keyPath: \Parent.date, ascending: true)
+        fetchRequest.sortDescriptors = [sortDesc]
+        
         
         do{
             let incexpArr = try PersistenceService.context.fetch(fetchRequest)
             self.incexpArr = incexpArr
-             
         }
         catch {
             print("fetching failed")
@@ -114,6 +116,7 @@ extension IncExpViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
         let red = UIColor(red: 1, green: 0, blue: 0, alpha: 0.5)
         let green = UIColor(red: 0, green: 1, blue: 0, alpha: 0.5)
 
@@ -128,7 +131,8 @@ extension IncExpViewController: UITableViewDataSource{
         } else {
             cell.backgroundColor = red
         }
-
+        
+        
         cell.titleLabel?.text = incexp.title
         cell.amountLabel?.text = String(incexp.amount)
         cell.noteLabel?.text = incexp.note

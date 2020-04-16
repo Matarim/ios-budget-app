@@ -35,7 +35,6 @@ class HomeViewController: UIViewController {
             performCalc()
         } else {
             amountAvailable.text = String(previousAmount)
-            print("doing this!")
         }
     }
     
@@ -70,7 +69,6 @@ class HomeViewController: UIViewController {
             amountAvailable.text = String(incomeArr.reduce(0, +) - expenseArr.reduce(0, +))
         } else {
             amountAvailable.text = String(previousAmount)
-            print("doing calc!")
         }
     }
     
@@ -108,7 +106,6 @@ class HomeViewController: UIViewController {
             self.getdata()
             self.amountAvailable.text! = String(self.previousAmount - self.newAmount)
 
-            
          }
         
     }
