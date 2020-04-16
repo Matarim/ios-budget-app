@@ -57,7 +57,11 @@ class IncExpViewController: UIViewController, UITableViewDelegate {
         let fetchRequest: NSFetchRequest<Parent> = Parent.fetchRequest()
         let sortDesc = NSSortDescriptor(keyPath: \Parent.date, ascending: true)
         fetchRequest.sortDescriptors = [sortDesc]
-        
+        let calendar = Calendar.current
+        let currentDate = Date()
+        let beginCurMonth = calendar.dateInterval(of: .month, for: currentDate)?.start
+        let endCurMonth = calendar.dateInterval(of: .month, for: currentDate)?.end
+        fetchRequest.predicate = NSPredicate(format: "date >= %@ && date < %@", beginCurMonth! as CVarArg, endCurMonth! as CVarArg)
         
         do{
             let incexpArr = try PersistenceService.context.fetch(fetchRequest)
@@ -154,7 +158,7 @@ extension IncExpViewController: UITableViewDataSource{
         
           
         tableView.beginUpdates()
-        tableView.reloadRows(at: [selectedIndex], with: .none)
+        tableView.reloadData()
         tableView.endUpdates()
     }
     

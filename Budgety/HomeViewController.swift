@@ -91,6 +91,7 @@ class HomeViewController: UIViewController {
         NotificationCenter.default.addObserver(forName: .incomeKey, object: nil, queue: OperationQueue.main) {
             (notification) in
             let amtAvail = notification.object as! IncomeViewController
+            self.previousAmount = Double(self.amountAvailable.text!)!
             self.newAmount = Double(amtAvail.amountDeclared)!
             self.income = true
             self.getdata()
@@ -101,6 +102,7 @@ class HomeViewController: UIViewController {
         NotificationCenter.default.addObserver(forName: .expenseKey, object: nil, queue: OperationQueue.main) {
              (notification) in
             let amtAvail = notification.object as! ExpenseViewController
+            self.previousAmount = Double(self.amountAvailable.text!)!
             self.newAmount = Double(amtAvail.amountDeclared)!
             self.expense = true
             self.getdata()

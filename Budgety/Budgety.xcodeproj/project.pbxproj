@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		429512EB2448D2B900214CA0 /* ChartDateSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429512EA2448D2B900214CA0 /* ChartDateSelectorView.swift */; };
 		8261B9802423F199003C37A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261B97F2423F199003C37A3 /* AppDelegate.swift */; };
 		8261B9862423F19B003C37A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8261B9852423F19B003C37A3 /* Assets.xcassets */; };
 		8261B9892423F19B003C37A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8261B9882423F19B003C37A3 /* Preview Assets.xcassets */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		429512EA2448D2B900214CA0 /* ChartDateSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDateSelectorView.swift; sourceTree = "<group>"; };
 		8261B97C2423F199003C37A3 /* Budgety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgety.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8261B97F2423F199003C37A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8261B9852423F19B003C37A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				82EDAB91242D39140034A5B7 /* IncomeViewController.swift */,
 				82EDAB97242D98360034A5B7 /* ExpenseViewController.swift */,
 				8261B97F2423F199003C37A3 /* AppDelegate.swift */,
+				429512EA2448D2B900214CA0 /* ChartDateSelectorView.swift */,
 				82A8DEA62434EAA200C8EB65 /* PersistenceService.swift */,
 				82EDAB9F242F96670034A5B7 /* NotificationNameExtension.swift */,
 				82A8DEB1243A936700C8EB65 /* IncExpTableCell.swift */,
@@ -317,6 +320,7 @@
 			files = (
 				82A8DEE3243BA6A300C8EB65 /* Expense+CoreDataClass.swift in Sources */,
 				82EDAB92242D39140034A5B7 /* IncomeViewController.swift in Sources */,
+				429512EB2448D2B900214CA0 /* ChartDateSelectorView.swift in Sources */,
 				82A8DEA72434EAA200C8EB65 /* PersistenceService.swift in Sources */,
 				82A8DEA32432DA4A00C8EB65 /* IncExpViewController.swift in Sources */,
 				82A8DEE2243BA6A300C8EB65 /* Parent+CoreDataProperties.swift in Sources */,
