@@ -34,6 +34,8 @@ class ExpenseViewController: UIViewController {
         super.viewDidLoad()
 
         datePicker = UIDatePicker()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
         datePicker?.datePickerMode = .date
         datePicker?.addTarget(self, action: #selector(ExpenseViewController.dateChanged(datePicker:)), for: .valueChanged)
         
@@ -42,6 +44,7 @@ class ExpenseViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
         
         inputTextField.inputView = datePicker
+        inputTextField.text = dateFormatter.string(from: Date())
         self.switchMode(self)
     }
     

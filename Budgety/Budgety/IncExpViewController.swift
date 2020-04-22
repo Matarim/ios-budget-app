@@ -132,13 +132,22 @@ extension IncExpViewController: UITableViewDataSource{
         let incexp = incexpArr[indexPath.row]
         if incexpArr[indexPath.row].isIncome == true {
             cell.backgroundColor = green
+           /* if cell.isSelected {
+                cell.backgroundColor = .green
+            }*/
         } else {
             cell.backgroundColor = red
+            /*if cell.isSelected {
+                cell.backgroundColor = .red
+            }*/
         }
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
         
         
         cell.titleLabel?.text = incexp.title
-        cell.amountLabel?.text = String(incexp.amount)
+        cell.amountLabel?.text = formatter.string(from: NSNumber(value: incexp.amount))
         cell.noteLabel?.text = incexp.note
         cell.noteLabel?.sizeToFit()
         cell.dateLabel?.text = dateFormatter.string(for: incexp.date)!

@@ -25,28 +25,18 @@ class HomeViewController: UIViewController {
     var expenseArr = [Double]()
     
     deinit {
+        self.reloadInputViews()
         NotificationCenter.default.removeObserver(self)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        previousAmount = Double(amountAvailable.text!)!
-        getdata()
-        if incexpArr.count != previousCount {
-            performCalc()
-        } else {
-            amountAvailable.text = String(previousAmount)
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
         
-        //This makes sure that the label is not nil
         if amountAvailable.text == "" {
             amountAvailable.text = "0"
         }
-     
         createObserver()
+        getdata()
+        performCalc()
         
     }
     
@@ -64,9 +54,11 @@ class HomeViewController: UIViewController {
     }
     
     func performCalc() {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
         if incexpArr.count > 0 {
             separatingData()
-            amountAvailable.text = String(incomeArr.reduce(0, +) - expenseArr.reduce(0, +))
+            amountAvailable.text = formatter.string(from: NSNumber(value: incomeArr.reduce(0, +) - expenseArr.reduce(0, +)))
         } else {
             amountAvailable.text = String(previousAmount)
         }
@@ -90,23 +82,25 @@ class HomeViewController: UIViewController {
         
         NotificationCenter.default.addObserver(forName: .incomeKey, object: nil, queue: OperationQueue.main) {
             (notification) in
-            let amtAvail = notification.object as! IncomeViewController
-            self.previousAmount = Double(self.amountAvailable.text!)!
-            self.newAmount = Double(amtAvail.amountDeclared)!
             self.income = true
-            self.getdata()
-            self.amountAvailable.text! = String(self.previousAmount + self.newAmount)
-            
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currency
+            let amtAvail = notification.object as! IncomeViewController
+            self.newAmount = Double(amtAvail.amountDeclared)!
+            self.previousAmount = (self.amountAvailable.text!).removeFormatAmount()
+
+            self.amountAvailable.text! = formatter.string(from: NSNumber(value: self.previousAmount + self.newAmount))!
         }
         
         NotificationCenter.default.addObserver(forName: .expenseKey, object: nil, queue: OperationQueue.main) {
              (notification) in
-            let amtAvail = notification.object as! ExpenseViewController
-            self.previousAmount = Double(self.amountAvailable.text!)!
-            self.newAmount = Double(amtAvail.amountDeclared)!
             self.expense = true
-            self.getdata()
-            self.amountAvailable.text! = String(self.previousAmount - self.newAmount)
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currency
+            let amtAvail = notification.object as! IncomeViewController
+            self.newAmount = Double(amtAvail.amountDeclared)!
+            self.previousAmount = (self.amountAvailable.text!).removeFormatAmount()
+            self.amountAvailable.text! = formatter.string(from: NSNumber(value: self.previousAmount - self.newAmount))!
 
          }
         
@@ -114,4 +108,15 @@ class HomeViewController: UIViewController {
     
 }
 
+extension String {
+    func removeFormatAmount() -> Double {
+        let formatter = NumberFormatter()
 
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.numberStyle = .currency
+        formatter.currencySymbol = "$"
+        formatter.decimalSeparator = ","
+
+        return formatter.number(from: self) as! Double? ?? 0
+     }
+}
