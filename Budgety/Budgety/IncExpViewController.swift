@@ -37,6 +37,7 @@ class IncExpViewController: UIViewController, UITableViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
 
+        tableView.reloadData()
         let now = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "LLLL"
@@ -47,6 +48,9 @@ class IncExpViewController: UIViewController, UITableViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if let index = self.tableView.indexPathForSelectedRow{
+            self.tableView.deselectRow(at: index, animated: true)
+        }
         getdata()
         
         tableView.reloadData()
@@ -118,54 +122,62 @@ extension IncExpViewController: UITableViewDataSource{
         }
     }
     
+//  Handles displayiing cell and loading data into each cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        let red = UIColor(red: 1, green: 0, blue: 0, alpha: 0.5)
-        let green = UIColor(red: 0, green: 1, blue: 0, alpha: 0.5)
-
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! IncExpTableCellView
         
         let incexp = incexpArr[indexPath.row]
-        if incexpArr[indexPath.row].isIncome == true {
-            cell.backgroundColor = green
-           /* if cell.isSelected {
-                cell.backgroundColor = .green
-            }*/
-        } else {
-            cell.backgroundColor = red
-            /*if cell.isSelected {
-                cell.backgroundColor = .red
-            }*/
-        }
         
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        
-        
+         
         cell.titleLabel?.text = incexp.title
         cell.amountLabel?.text = formatter.string(from: NSNumber(value: incexp.amount))
         cell.noteLabel?.text = incexp.note
         cell.noteLabel?.sizeToFit()
         cell.dateLabel?.text = dateFormatter.string(for: incexp.date)!
         
-        
         animate()
         return cell
     
     }
-    
+//  Handles speed and animation for each cell expansion
     func animate() {
         UIView.animate(withDuration: 0.5, delay: 0.3, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options:  .curveEaseInOut, animations: { self.tableView.layoutIfNeeded()})
     }
+//    Handles the color of the cell
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        var red:UIColor
+        var green:UIColor
+        
+        tableView.selectRow(at: selectedIndex, animated: true, scrollPosition: .none)
+        
+        if cell.isSelected == true {
+            red = UIColor(red: 2, green: 0, blue: 0, alpha: 1)
+            green = UIColor(red: 0, green: 2, blue: 0, alpha: 1)
+        } else {
+            red = UIColor(red: 1, green: 0, blue: 0, alpha: 0.5)
+            green = UIColor(red: 0, green: 1, blue: 0, alpha: 0.5)
+        }
+        
+        let incexp = incexpArr[indexPath.row]
+        if incexp.isIncome == true {
+            cell.backgroundColor = green
+        } else {
+            cell.backgroundColor = red
+        }
+        
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedIndex = indexPath
+        tableView.deselectRow(at: indexPath, animated: false)
         
-          
+        selectedIndex = indexPath
+
         tableView.beginUpdates()
         tableView.reloadData()
         tableView.endUpdates()

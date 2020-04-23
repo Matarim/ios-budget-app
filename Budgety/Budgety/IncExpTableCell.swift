@@ -24,6 +24,7 @@ class IncExpTableCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
 
 }
