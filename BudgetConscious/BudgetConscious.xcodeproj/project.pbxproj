@@ -16,7 +16,7 @@
 		8261B9A22423F19C003C37A3 /* BudgetyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261B9A12423F19C003C37A3 /* BudgetyUITests.swift */; };
 		82A8DEA32432DA4A00C8EB65 /* IncExpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8DEA22432DA4A00C8EB65 /* IncExpViewController.swift */; };
 		82A8DEA72434EAA200C8EB65 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8DEA62434EAA200C8EB65 /* PersistenceService.swift */; };
-		82A8DEAA2434F11E00C8EB65 /* Budgety.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82A8DEA82434F11E00C8EB65 /* Budgety.xcdatamodeld */; };
+		82A8DEAA2434F11E00C8EB65 /* BudgetConscious.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82A8DEA82434F11E00C8EB65 /* BudgetConscious.xcdatamodeld */; };
 		82A8DEB2243A936700C8EB65 /* IncExpTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8DEB1243A936700C8EB65 /* IncExpTableCell.swift */; };
 		82A8DEDF243BA6A300C8EB65 /* Income+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8DED9243BA6A300C8EB65 /* Income+CoreDataClass.swift */; };
 		82A8DEE0243BA6A300C8EB65 /* Income+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8DEDA243BA6A300C8EB65 /* Income+CoreDataProperties.swift */; };
@@ -52,16 +52,16 @@
 
 /* Begin PBXFileReference section */
 		429512EA2448D2B900214CA0 /* ChartDateSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDateSelectorView.swift; sourceTree = "<group>"; };
-		8261B97C2423F199003C37A3 /* Budgety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgety.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8261B97C2423F199003C37A3 /* BudgetConscious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetConscious.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8261B97F2423F199003C37A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8261B9852423F19B003C37A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8261B9882423F19B003C37A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8261B98B2423F19B003C37A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8261B98D2423F19B003C37A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8261B9922423F19C003C37A3 /* BudgetyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8261B9922423F19C003C37A3 /* BudgetConsciousTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetConsciousTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8261B9962423F19C003C37A3 /* BudgetyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetyTests.swift; sourceTree = "<group>"; };
 		8261B9982423F19C003C37A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8261B99D2423F19C003C37A3 /* BudgetyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8261B99D2423F19C003C37A3 /* BudgetConsciousUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetConsciousUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8261B9A12423F19C003C37A3 /* BudgetyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetyUITests.swift; sourceTree = "<group>"; };
 		8261B9A32423F19C003C37A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82A8DEA22432DA4A00C8EB65 /* IncExpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncExpViewController.swift; sourceTree = "<group>"; };
@@ -111,9 +111,9 @@
 		8261B9732423F199003C37A3 = {
 			isa = PBXGroup;
 			children = (
-				8261B97E2423F199003C37A3 /* Budgety */,
-				8261B9952423F19C003C37A3 /* BudgetyTests */,
-				8261B9A02423F19C003C37A3 /* BudgetyUITests */,
+				8261B97E2423F199003C37A3 /* BudgetConscious */,
+				8261B9952423F19C003C37A3 /* BudgetConsciousTests */,
+				8261B9A02423F19C003C37A3 /* BudgetConsciousUITests */,
 				8261B97D2423F199003C37A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,14 +121,14 @@
 		8261B97D2423F199003C37A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8261B97C2423F199003C37A3 /* Budgety.app */,
-				8261B9922423F19C003C37A3 /* BudgetyTests.xctest */,
-				8261B99D2423F19C003C37A3 /* BudgetyUITests.xctest */,
+				8261B97C2423F199003C37A3 /* BudgetConscious.app */,
+				8261B9922423F19C003C37A3 /* BudgetConsciousTests.xctest */,
+				8261B99D2423F19C003C37A3 /* BudgetConsciousUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8261B97E2423F199003C37A3 /* Budgety */ = {
+		8261B97E2423F199003C37A3 /* BudgetConscious */ = {
 			isa = PBXGroup;
 			children = (
 				82B6C38E24278EA10076ABBA /* Main.storyboard */,
@@ -153,9 +153,9 @@
 				8261B9852423F19B003C37A3 /* Assets.xcassets */,
 				8261B98D2423F19B003C37A3 /* Info.plist */,
 				8261B9872423F19B003C37A3 /* Preview Content */,
-				82A8DEA82434F11E00C8EB65 /* Budgety.xcdatamodeld */,
+				82A8DEA82434F11E00C8EB65 /* BudgetConscious.xcdatamodeld */,
 			);
-			path = Budgety;
+			path = BudgetConscious;
 			sourceTree = "<group>";
 		};
 		8261B9872423F19B003C37A3 /* Preview Content */ = {
@@ -166,30 +166,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8261B9952423F19C003C37A3 /* BudgetyTests */ = {
+		8261B9952423F19C003C37A3 /* BudgetConsciousTests */ = {
 			isa = PBXGroup;
 			children = (
 				8261B9962423F19C003C37A3 /* BudgetyTests.swift */,
 				8261B9982423F19C003C37A3 /* Info.plist */,
 			);
-			path = BudgetyTests;
+			path = BudgetConsciousTests;
 			sourceTree = "<group>";
 		};
-		8261B9A02423F19C003C37A3 /* BudgetyUITests */ = {
+		8261B9A02423F19C003C37A3 /* BudgetConsciousUITests */ = {
 			isa = PBXGroup;
 			children = (
 				8261B9A12423F19C003C37A3 /* BudgetyUITests.swift */,
 				8261B9A32423F19C003C37A3 /* Info.plist */,
 			);
-			path = BudgetyUITests;
+			path = BudgetConsciousUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8261B97B2423F199003C37A3 /* Budgety */ = {
+		8261B97B2423F199003C37A3 /* BudgetConscious */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8261B9A62423F19C003C37A3 /* Build configuration list for PBXNativeTarget "Budgety" */;
+			buildConfigurationList = 8261B9A62423F19C003C37A3 /* Build configuration list for PBXNativeTarget "BudgetConscious" */;
 			buildPhases = (
 				8261B9782423F199003C37A3 /* Sources */,
 				8261B9792423F199003C37A3 /* Frameworks */,
@@ -199,14 +199,14 @@
 			);
 			dependencies = (
 			);
-			name = Budgety;
+			name = BudgetConscious;
 			productName = Budgety;
-			productReference = 8261B97C2423F199003C37A3 /* Budgety.app */;
+			productReference = 8261B97C2423F199003C37A3 /* BudgetConscious.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8261B9912423F19C003C37A3 /* BudgetyTests */ = {
+		8261B9912423F19C003C37A3 /* BudgetConsciousTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8261B9A92423F19C003C37A3 /* Build configuration list for PBXNativeTarget "BudgetyTests" */;
+			buildConfigurationList = 8261B9A92423F19C003C37A3 /* Build configuration list for PBXNativeTarget "BudgetConsciousTests" */;
 			buildPhases = (
 				8261B98E2423F19C003C37A3 /* Sources */,
 				8261B98F2423F19C003C37A3 /* Frameworks */,
@@ -217,14 +217,14 @@
 			dependencies = (
 				8261B9942423F19C003C37A3 /* PBXTargetDependency */,
 			);
-			name = BudgetyTests;
+			name = BudgetConsciousTests;
 			productName = BudgetyTests;
-			productReference = 8261B9922423F19C003C37A3 /* BudgetyTests.xctest */;
+			productReference = 8261B9922423F19C003C37A3 /* BudgetConsciousTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8261B99C2423F19C003C37A3 /* BudgetyUITests */ = {
+		8261B99C2423F19C003C37A3 /* BudgetConsciousUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8261B9AC2423F19C003C37A3 /* Build configuration list for PBXNativeTarget "BudgetyUITests" */;
+			buildConfigurationList = 8261B9AC2423F19C003C37A3 /* Build configuration list for PBXNativeTarget "BudgetConsciousUITests" */;
 			buildPhases = (
 				8261B9992423F19C003C37A3 /* Sources */,
 				8261B99A2423F19C003C37A3 /* Frameworks */,
@@ -235,9 +235,9 @@
 			dependencies = (
 				8261B99F2423F19C003C37A3 /* PBXTargetDependency */,
 			);
-			name = BudgetyUITests;
+			name = BudgetConsciousUITests;
 			productName = BudgetyUITests;
-			productReference = 8261B99D2423F19C003C37A3 /* BudgetyUITests.xctest */;
+			productReference = 8261B99D2423F19C003C37A3 /* BudgetConsciousUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -263,7 +263,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8261B9772423F199003C37A3 /* Build configuration list for PBXProject "Budgety" */;
+			buildConfigurationList = 8261B9772423F199003C37A3 /* Build configuration list for PBXProject "BudgetConscious" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -276,9 +276,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8261B97B2423F199003C37A3 /* Budgety */,
-				8261B9912423F19C003C37A3 /* BudgetyTests */,
-				8261B99C2423F19C003C37A3 /* BudgetyUITests */,
+				8261B97B2423F199003C37A3 /* BudgetConscious */,
+				8261B9912423F19C003C37A3 /* BudgetConsciousTests */,
+				8261B99C2423F19C003C37A3 /* BudgetConsciousUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -327,7 +327,7 @@
 				82EDAB98242D98360034A5B7 /* ExpenseViewController.swift in Sources */,
 				8261B9802423F199003C37A3 /* AppDelegate.swift in Sources */,
 				82A8DEB2243A936700C8EB65 /* IncExpTableCell.swift in Sources */,
-				82A8DEAA2434F11E00C8EB65 /* Budgety.xcdatamodeld in Sources */,
+				82A8DEAA2434F11E00C8EB65 /* BudgetConscious.xcdatamodeld in Sources */,
 				82EDABA0242F96670034A5B7 /* NotificationNameExtension.swift in Sources */,
 				82A8DEDF243BA6A300C8EB65 /* Income+CoreDataClass.swift in Sources */,
 				82A8DEE4243BA6A300C8EB65 /* Expense+CoreDataProperties.swift in Sources */,
@@ -358,12 +358,12 @@
 /* Begin PBXTargetDependency section */
 		8261B9942423F19C003C37A3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8261B97B2423F199003C37A3 /* Budgety */;
+			target = 8261B97B2423F199003C37A3 /* BudgetConscious */;
 			targetProxy = 8261B9932423F19C003C37A3 /* PBXContainerItemProxy */;
 		};
 		8261B99F2423F19C003C37A3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8261B97B2423F199003C37A3 /* Budgety */;
+			target = 8261B97B2423F199003C37A3 /* BudgetConscious */;
 			targetProxy = 8261B99E2423F19C003C37A3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -499,16 +499,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Budgety/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BudgetConscious/Preview Content\"";
 				DEVELOPMENT_TEAM = 2Z5HW57JQK;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Budgety/Info.plist;
+				INFOPLIST_FILE = BudgetConscious/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BRCTCBudgetAPP.Budgety;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = BRCTCBudgetAPP.BudgetConscious;
+				PRODUCT_NAME = BudgetConscious;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -519,16 +519,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Budgety/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BudgetConscious/Preview Content\"";
 				DEVELOPMENT_TEAM = 2Z5HW57JQK;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Budgety/Info.plist;
+				INFOPLIST_FILE = BudgetConscious/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BRCTCBudgetAPP.Budgety;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = BRCTCBudgetAPP.BudgetConscious;
+				PRODUCT_NAME = BudgetConscious;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -552,7 +552,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Budgety.app/Budgety";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BudgetConscious.app/BudgetConscious";
 			};
 			name = Debug;
 		};
@@ -574,7 +574,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Budgety.app/Budgety";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BudgetConscious.app/BudgetConscious";
 			};
 			name = Release;
 		};
@@ -621,7 +621,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8261B9772423F199003C37A3 /* Build configuration list for PBXProject "Budgety" */ = {
+		8261B9772423F199003C37A3 /* Build configuration list for PBXProject "BudgetConscious" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8261B9A42423F19C003C37A3 /* Debug */,
@@ -630,7 +630,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8261B9A62423F19C003C37A3 /* Build configuration list for PBXNativeTarget "Budgety" */ = {
+		8261B9A62423F19C003C37A3 /* Build configuration list for PBXNativeTarget "BudgetConscious" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8261B9A72423F19C003C37A3 /* Debug */,
@@ -639,7 +639,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8261B9A92423F19C003C37A3 /* Build configuration list for PBXNativeTarget "BudgetyTests" */ = {
+		8261B9A92423F19C003C37A3 /* Build configuration list for PBXNativeTarget "BudgetConsciousTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8261B9AA2423F19C003C37A3 /* Debug */,
@@ -648,7 +648,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8261B9AC2423F19C003C37A3 /* Build configuration list for PBXNativeTarget "BudgetyUITests" */ = {
+		8261B9AC2423F19C003C37A3 /* Build configuration list for PBXNativeTarget "BudgetConsciousUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8261B9AD2423F19C003C37A3 /* Debug */,
@@ -660,13 +660,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		82A8DEA82434F11E00C8EB65 /* Budgety.xcdatamodeld */ = {
+		82A8DEA82434F11E00C8EB65 /* BudgetConscious.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				82A8DEA92434F11E00C8EB65 /* Budgety.xcdatamodel */,
 			);
 			currentVersion = 82A8DEA92434F11E00C8EB65 /* Budgety.xcdatamodel */;
-			path = Budgety.xcdatamodeld;
+			path = BudgetConscious.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

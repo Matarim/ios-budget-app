@@ -14,22 +14,19 @@ class IncExpTableCellView: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-
+    @IBOutlet weak var editBtn: UIButton!
+    
 }
 
 class IncExpViewController: UIViewController, UITableViewDelegate {
     @IBOutlet var tableView : UITableView!
     @IBOutlet weak var monthLabel: UILabel!
     
-    
     var selected:Bool = false
     
-    //var expenseArr = [Expense]()
-    //var incomeArr = [Income]()
     var incexpArr = [Parent]()
     
     private var persistentContainer = NSPersistentContainer(name: "Parent")
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,9 +51,9 @@ class IncExpViewController: UIViewController, UITableViewDelegate {
         getdata()
         
         tableView.reloadData()
-        
     }
     
+    // Retrieves data from CoreData
     func getdata(parentTypeIndex: String? = nil) {
         let fetchRequest: NSFetchRequest<Parent> = Parent.fetchRequest()
         let sortDesc = NSSortDescriptor(keyPath: \Parent.date, ascending: true)
@@ -67,11 +64,10 @@ class IncExpViewController: UIViewController, UITableViewDelegate {
         let endCurMonth = calendar.dateInterval(of: .month, for: currentDate)?.end
         fetchRequest.predicate = NSPredicate(format: "date >= %@ && date < %@", beginCurMonth! as CVarArg, endCurMonth! as CVarArg)
         
-        do{
+        do {
             let incexpArr = try PersistenceService.context.fetch(fetchRequest)
             self.incexpArr = incexpArr
-        }
-        catch {
+        } catch {
             print("fetching failed")
         }
     }
@@ -120,6 +116,7 @@ extension IncExpViewController: UITableViewDataSource{
             saveContext()
             print(dataItem)
         }
+        
     }
     
 //  Handles displayiing cell and loading data into each cell
