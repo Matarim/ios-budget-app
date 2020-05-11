@@ -11,4 +11,5 @@ import Foundation
 extension Notification.Name {
     static let incomeKey = Notification.Name(rawValue: "incomeNotificationKey")
     static let expenseKey = Notification.Name(rawValue: "expenseNotificationKey")
+    static let editKey = Notification.Name(rawValue: "editNotificationKey")
 }

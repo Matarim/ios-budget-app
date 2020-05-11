@@ -9,9 +9,9 @@
 import UIKit
 import CoreData
 
+// Creates Global variables for the observer keys
 let incomeNotificationKey = "incomeKey"
 let expenseNotificationKey = "expenseKey"
-let currentAmt = UserDefaults.standard
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var amountAvailable: UILabel!
@@ -24,8 +24,8 @@ class HomeViewController: UIViewController {
     var incomeArr = [Double]()
     var expenseArr = [Double]()
     
+    // Removes the observer to prevent memory leaks and prevent performance issues
     deinit {
-        self.reloadInputViews()
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -34,12 +34,18 @@ class HomeViewController: UIViewController {
         if amountAvailable.text == "" {
             amountAvailable.text = "0"
         }
-        createObserver()
+        // Calls these functions when the view appears
         getdata()
         performCalc()
-        
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        createObserver()
+    }
+    
+    // Retrieves all the data from CoreData
     func getdata(parentTypeIndex: String? = nil) {
         let fetchRequest: NSFetchRequest<Parent> = Parent.fetchRequest()
         do{
@@ -53,17 +59,20 @@ class HomeViewController: UIViewController {
         }
     }
     
+    // performs the calculation based on income and expense
     func performCalc() {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        if incexpArr.count > 0 {
+        if incexpArr.count > 0 && incexpArr.count != previousCount {
             separatingData()
             amountAvailable.text = formatter.string(from: NSNumber(value: incomeArr.reduce(0, +) - expenseArr.reduce(0, +)))
         } else {
-            amountAvailable.text = String(previousAmount)
+            previousAmount = (amountAvailable.text!).removeFormatAmount()
+            amountAvailable.text! = formatter.string(from: NSNumber(value: previousAmount))!
         }
     }
     
+    // Loops through array and splits income and expense into their own arrays
     func separatingData() {
         let sum = 0
         previousCount = incexpArr.count
@@ -78,6 +87,7 @@ class HomeViewController: UIViewController {
         }
     }
     
+    // Creates observer to recognize when the income or expense modal is open and update the current amount
     func createObserver() {
         
         NotificationCenter.default.addObserver(forName: .incomeKey, object: nil, queue: OperationQueue.main) {
@@ -88,7 +98,6 @@ class HomeViewController: UIViewController {
             let amtAvail = notification.object as! IncomeViewController
             self.newAmount = Double(amtAvail.amountDeclared)!
             self.previousAmount = (self.amountAvailable.text!).removeFormatAmount()
-
             self.amountAvailable.text! = formatter.string(from: NSNumber(value: self.previousAmount + self.newAmount))!
         }
         
@@ -97,7 +106,7 @@ class HomeViewController: UIViewController {
             self.expense = true
             let formatter = NumberFormatter()
             formatter.numberStyle = .currency
-            let amtAvail = notification.object as! IncomeViewController
+            let amtAvail = notification.object as! ExpenseViewController
             self.newAmount = Double(amtAvail.amountDeclared)!
             self.previousAmount = (self.amountAvailable.text!).removeFormatAmount()
             self.amountAvailable.text! = formatter.string(from: NSNumber(value: self.previousAmount - self.newAmount))!
@@ -108,6 +117,7 @@ class HomeViewController: UIViewController {
     
 }
 
+// creates an extension for stripping the currency formatting for adding the values
 extension String {
     func removeFormatAmount() -> Double {
         let formatter = NumberFormatter()

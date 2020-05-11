@@ -48,6 +48,7 @@ class ExpenseViewController: UIViewController {
         self.switchMode(self)
     }
     
+    // Create button for modal and saves the data
     @IBAction func createData_btn(_ sender: Any) {
         NotificationCenter.default.post(name: .expenseKey, object: self)
         let dateFormatter = DateFormatter()
@@ -66,23 +67,26 @@ class ExpenseViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    // Cancel button that dismisses Modal
     @IBAction func cancelData_btn(_ sender: Any) {
         dismiss(animated: true)
     }
     
+    // Recognizes when modal is selected to close keyboard
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
         view.endEditing(true)
     }
     
+    // Sets the date field to use a datepicker
     @objc func dateChanged(datePicker: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         
         inputTextField.text = dateFormatter.string(from: datePicker.date)
-        //Undecided if this is wanted because it essentially auto closes the date picker potentially before the selection was finished....
-        //view.endEditing(true)
+
     }
     
+    // Adds a switch for the Modal for a future repeatable action
     @IBAction func switchMode(_ sender: Any) {
         let textFields: [UITextField] = [repeatSelection]
         if repeatSwitch.isOn == false{
