@@ -52,7 +52,7 @@
 
 /* Begin PBXFileReference section */
 		429512EA2448D2B900214CA0 /* ChartDateSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDateSelectorView.swift; sourceTree = "<group>"; };
-		8261B97C2423F199003C37A3 /* Budgety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgety.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8261B97C2423F199003C37A3 /* Budget Conscious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Budget Conscious.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8261B97F2423F199003C37A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8261B9852423F19B003C37A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8261B9882423F19B003C37A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		8261B97D2423F199003C37A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8261B97C2423F199003C37A3 /* Budgety.app */,
+				8261B97C2423F199003C37A3 /* Budget Conscious.app */,
 				8261B9922423F19C003C37A3 /* BudgetyTests.xctest */,
 				8261B99D2423F19C003C37A3 /* BudgetyUITests.xctest */,
 			);
@@ -201,7 +201,7 @@
 			);
 			name = Budgety;
 			productName = Budgety;
-			productReference = 8261B97C2423F199003C37A3 /* Budgety.app */;
+			productReference = 8261B97C2423F199003C37A3 /* Budget Conscious.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8261B9912423F19C003C37A3 /* BudgetyTests */ = {
@@ -507,8 +507,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BRCTCBudgetAPP.Budgety;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.7;
+				PRODUCT_BUNDLE_IDENTIFIER = BRCTCBudgetAPP.BudgetConscious;
+				PRODUCT_NAME = "Budget Conscious";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -527,8 +528,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BRCTCBudgetAPP.Budgety;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.7;
+				PRODUCT_BUNDLE_IDENTIFIER = BRCTCBudgetAPP.BudgetConscious;
+				PRODUCT_NAME = "Budget Conscious";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
