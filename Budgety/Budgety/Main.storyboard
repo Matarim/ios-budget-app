@@ -203,15 +203,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fic-cB-zVL">
+                                                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fic-cB-zVL">
                                                     <rect key="frame" x="11" y="11" width="263" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xYN-dc-fpx">
-                                                    <rect key="frame" x="20" y="67" width="374" height="94"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="ty2-es-XjO"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -224,13 +220,34 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ier-cE-Cds">
+                                                <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ier-cE-Cds">
                                                     <rect key="frame" x="272" y="11" width="112" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="112" id="1Lp-MQ-yPm"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xYN-dc-fpx">
+                                                    <rect key="frame" x="13" y="70" width="349" height="77"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="xYN-dc-fpx" secondAttribute="height" multiplier="187:47" constant="42.638297872340445" id="Qek-8G-lYR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="fic-cB-zVL" secondAttribute="trailing" constant="86" id="7W3-O2-dSy"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ier-cE-Cds" secondAttribute="trailing" constant="-24" id="Csd-XH-uog"/>
+                                                <constraint firstItem="xYN-dc-fpx" firstAttribute="top" secondItem="fic-cB-zVL" secondAttribute="bottom" constant="25" id="HbL-5L-cLk"/>
+                                                <constraint firstAttribute="trailing" secondItem="xYN-dc-fpx" secondAttribute="trailing" constant="13" id="azs-iS-EMz"/>
+                                                <constraint firstItem="fic-cB-zVL" firstAttribute="bottom" secondItem="ier-cE-Cds" secondAttribute="bottom" id="gnT-Q0-Y5m"/>
+                                                <constraint firstItem="xYN-dc-fpx" firstAttribute="leading" secondItem="wdh-sY-Wjt" secondAttribute="leading" constant="13" id="hHl-Mj-R9p"/>
+                                                <constraint firstItem="fic-cB-zVL" firstAttribute="baseline" secondItem="ier-cE-Cds" secondAttribute="baseline" id="qIx-2x-iM0"/>
+                                                <constraint firstItem="fic-cB-zVL" firstAttribute="top" secondItem="wdh-sY-Wjt" secondAttribute="topMargin" id="tC0-4j-edT"/>
+                                                <constraint firstItem="fic-cB-zVL" firstAttribute="leading" secondItem="wdh-sY-Wjt" secondAttribute="leadingMargin" constant="-4" id="uMc-ED-TPM"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="amountField" destination="ier-cE-Cds" id="PaA-6x-Qrz"/>
@@ -247,7 +264,6 @@
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lsu-Fe-TD9">
                                 <rect key="frame" x="90" y="90" width="195" height="49"/>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>

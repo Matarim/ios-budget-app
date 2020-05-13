@@ -218,6 +218,8 @@ extension IncExpViewController: UITableViewDataSource{
         cell.titleField?.text = incexp.title
         cell.amountField?.text = formatter.string(from: NSNumber(value: incexp.amount))
         cell.noteField?.text = incexp.note
+        cell.noteField.textAlignment = .left
+        cell.noteField.contentVerticalAlignment = .top
         cell.noteField?.sizeToFit()
         cell.dateField?.text = dateFormatter.string(for: incexp.date)!
         cell.addSubview(editSwitch)
@@ -239,6 +241,8 @@ extension IncExpViewController: UITableViewDataSource{
         cell.amountField.keyboardType = UIKeyboardType.decimalPad
         cell.titleField.addDoneButtonOnKeyboard()
         cell.noteField.addDoneButtonOnKeyboard()
+        cell.noteField.textAlignment = .left
+        cell.noteField.contentVerticalAlignment = .top
         cell.amountField.addDoneButtonOnKeyboard()
         cell.dateField.addDoneButtonOnKeyboard()
         
